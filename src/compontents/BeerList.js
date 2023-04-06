@@ -20,7 +20,7 @@ const BeerList = () => {
             <ul className="beer-list">
                 {beers.map(beer => (
                     <Beer key={beer.id} beer={beer} />    
-                ))};
+                ))}
             </ul>
         </div>
     );
