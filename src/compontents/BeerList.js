@@ -16,8 +16,8 @@ const BeerList = () => {
     }, []);
     
     return (
-        <div>
-            <ul>
+        <div className="beer-div">
+            <ul className="beer-list">
                 {beers.map(beer => (
                     <Beer key={beer.id} beer={beer} />    
                 ))};
