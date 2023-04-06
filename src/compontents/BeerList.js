@@ -1,31 +1,29 @@
 import React, { useState, useEffect } from "react";
+import Beer from "./Beer";
 
 const BeerList = () => {
+
     const [beers, setBeers] = useState([]);
     
+    // Fetch beers from API
     useEffect(() => {
         const fetchAPI = async () => {
-          const data = await fetch(
-            "https://api.punkapi.com/v2/beers?page=1&per_page=10"
-          );
+          const data = await fetch("https://api.punkapi.com/v2/beers");
           const beerList = await data.json();
           setBeers(beerList);
         };
         fetchAPI();
-      }, []);
+    }, []);
     
-      return (
+    return (
         <div>
-          <ul>
-            {beers.map(beer => (
-              <li key={beer.id}>
-                <h3>{beer.name}</h3>
-                {beer.description.substring(0, 150)}...
-              </li>
-            ))}
-          </ul>
+            <ul>
+                {beers.map(beer => (
+                    <Beer key={beer.id} beer={beer} />    
+                ))};
+            </ul>
         </div>
-      );
+    );
 
 }
 

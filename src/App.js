@@ -3,9 +3,7 @@ import BeerList from './compontents/BeerList';
 
 function App() {
   return (
-    <div>
-      <BeerList />
-    </div>
+    <BeerList />
   );
 }
 
