@@ -22,13 +22,15 @@ function App() {
     // Update filteredBeers
     useEffect(() => {
         if (searchInput !== '')
-            setFilteredBeers(beers.filter(beer => 
-                beer.name.toLowerCase().includes(searchInput)));
+            setFilteredBeers(beers
+                .filter(beer => beer.name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase()))
+                // .sort((a, b) => a.name.localeCompare(b.name))
+            );
         else
             setFilteredBeers(beers);
     }, [beers, searchInput]);
     
-    
+
     return (<>
         <FilterForm searchInput={searchInput} setSearchInput={setSearchInput} />
         <BeerList beers={filteredBeers} />
