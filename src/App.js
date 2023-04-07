@@ -10,38 +10,39 @@ function App() {
         const storedList = localStorage.getItem('likedBeersId');
         return storedList ? JSON.parse(storedList) : [];
     });
-    const [filteredBeers, setFilteredBeers] = useState([]);
     const [searchInput, setSearchInput] = useState('');
     const [displayOnlyLiked, setDisplayOnlyLiked] = useState(false);
     
+    const fetchAPI = async (url) => {
+        const data = await fetch(url);
+        const beerList = await data.json();
+        
+        // Add is_liked to beer object
+        beerList.forEach(beer => beer.is_liked = likedBeersId.includes(beer.id));
+        setBeers(beerList);
+    };
+
     // Fetch beers from API
     useEffect(() => {
-        const fetchAPI = async () => {
-          const data = await fetch("https://api.punkapi.com/v2/beers?page=1&per_page=50");
-          const beerList = await data.json();
-          setBeers(beerList);
-        };
-        fetchAPI();
+        fetchAPI("https://api.punkapi.com/v2/beers?page=1&per_page=50");
     }, []);
 
     // Update filteredBeers
     useEffect(() => {
-        let beersToDisplay = [...beers];
-        
-        // Add is_liked to beer object
-        beersToDisplay.forEach(beer => beer.is_liked = likedBeersId.includes(beer.id));
+        let url = new URL('https://api.punkapi.com/v2/beers');
 
         // Display only liked
         if (displayOnlyLiked)
-            beersToDisplay = beersToDisplay.filter(beer => beer.is_liked);
-
+            url.searchParams.set("ids", likedBeersId.join('|'));
+    
         // Filter by name
         if (searchInput !== '')
-            beersToDisplay = beersToDisplay.filter(beer => 
-                beer.name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase()));
-        
-        setFilteredBeers(beersToDisplay);
-    }, [beers, searchInput, likedBeersId, displayOnlyLiked]);
+            url.searchParams.set('beer_name', searchInput);
+
+        // uri += '&page=1&per_page=50';
+        console.log(url.href);
+        fetchAPI(url.href);
+    }, [searchInput, likedBeersId, displayOnlyLiked]);
     
     // Save likedBeersId to local storage
     useEffect(() => {
@@ -62,7 +63,7 @@ function App() {
             displayOnlyLiked={displayOnlyLiked}
             setDisplayOnlyLiked={setDisplayOnlyLiked}
         />
-        <BeerList beers={filteredBeers} toogleLike={toogleLike} />
+        <BeerList beers={beers} toogleLike={toogleLike} />
     </>);
 }
 
