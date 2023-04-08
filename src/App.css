@@ -1,14 +1,36 @@
 .filter-form-wrapper {
   padding: 10px;
-  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.filter-form-wrapper input {
+.filter-form-wrapper img {
+  width: 100px;
+}
+
+.filter-form-wrapper input[type=text] {
   font-size: 20px;
   background-color: #f2f2f2;
   outline: none;
   border: solid 1.3px black;
   border-radius: 3px;
+  margin-right: 10px;
+}
+
+.filter-form-wrapper input[type=checkbox] {
+  display: none;
+}
+
+.filter-form-wrapper .displayLikedText {
+  font-size: 16px;
+  padding-right: 5px;
+}
+
+.filter-form-wrapper .displayLikedIcon {
+  font-size: 26px;
+  position: relative;
+  top: 6px;
 }
 
 .beers-wrapper{
@@ -41,6 +63,19 @@
   z-index: 5;
   transform: rotate(5deg) scale(1.1);
   /* background-color: #e8aa0e1b; */
+}
+
+@media (max-width: 740px) {
+  .filter-form-wrapper .displayLikedText {
+    display: none;
+  }
+  .beer {
+    transition: all;
+  }
+
+  .beer:hover {
+    transform: none;
+  }
 }
 
 .beer .like {
