@@ -11,7 +11,7 @@ const Beer = ({ beer, toogleLike }) =>  {
         <div className="beer">
             
             <div className="like" onClick={() => toogleLike(beer.id)}>
-                { beer.is_liked ? <AiFillHeart /> : <AiOutlineHeart /> }
+                { beer.is_liked ? <AiFillHeart style={{"color": "#C80032"}} /> : <AiOutlineHeart /> }
             </div>
 
             <Link to={`/beers/${beer.id}`}>

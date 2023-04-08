@@ -21,7 +21,7 @@ const FilterForm = ({ searchInput, setSearchInput, displayOnlyLiked, setDisplayO
                 <span className="displayLikedText">Only liked</span>
 
                 <span className="displayLikedIcon">
-                    { displayOnlyLiked ? <AiFillHeart /> : <AiOutlineHeart /> }
+                    { displayOnlyLiked ? <AiFillHeart style={{"color": "#C80032"}} /> : <AiOutlineHeart /> }
                 </span>
 
                 <input 
