@@ -8,10 +8,10 @@ const Beer = ({ beer, toogleLike }) =>  {
     const needBeSmaller = beer.name.length > 25 || beer.tagline.length > 40;
 
     return (
-        <div className="beer">
+        <div className={`beer ${beer.is_liked ? 'liked' : ''}`}>
             
             <div className="like" onClick={() => toogleLike(beer.id)}>
-                { beer.is_liked ? <AiFillHeart style={{"color": "#C80032"}} /> : <AiOutlineHeart /> }
+                { beer.is_liked ? <AiFillHeart style={{"color": "#bf9000"}} /> : <AiOutlineHeart /> }
             </div>
 
             <Link to={`/beers/${beer.id}`}>
