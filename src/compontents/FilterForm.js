@@ -1,7 +1,7 @@
 import React from "react";
 
 const FilterForm = ({ searchInput, setSearchInput, displayOnlyLiked, setDisplayOnlyLiked }) =>  (
-    <div className="filter-form">
+    <div className="filter-form-wrapper">
         <form>
             <input 
                 type="text" 
