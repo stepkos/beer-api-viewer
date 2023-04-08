@@ -16,6 +16,8 @@
   border: solid 1.3px black;
   border-radius: 3px;
   margin-right: 10px;
+  box-sizing: border-box;
+  width: 150px;
 }
 
 .filter-form-wrapper input[type=checkbox] {
