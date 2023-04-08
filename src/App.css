@@ -26,9 +26,6 @@
 }
 
 .beer {
-  /* border: 1px solid #ccc; */
-  /* margin-bottom: 10px; */
-  /* padding: 10px 50px; */
   background-color: #fff;
   text-align: center;
   width: 300px;
@@ -36,6 +33,15 @@
   padding: 20px;
   margin: 10px;
   position: relative;
+  cursor: pointer;
+  transition: transform ease-in-out .2s;
+  box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.5);
+}
+
+.beer:hover {
+  z-index: 5;
+  transform: rotate(5deg) scale(1.1);
+  /* background-color: #e8aa0e1b; */
 }
 
 .beer .like {
