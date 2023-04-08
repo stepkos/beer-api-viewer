@@ -14,6 +14,7 @@ function App() {
     const [displayOnlyLiked, setDisplayOnlyLiked] = useState(false);
     const [pageNumber, setPageNumber] = useState(1);
     const [isLoading, setIsLoading] = useState(false);
+    
     const pixelsOffsetToLoadNewData = 500;
     const scrollBeersPortion = 5;
     const baseUrl = 'https://api.punkapi.com/v2/beers';
@@ -31,20 +32,24 @@ function App() {
         beerList.forEach(beer => beer.is_liked = likedBeersId.includes(beer.id));
         
         if (pageNumber == 1)
-            setBeers(beerList);
+            await setBeers(beerList);
         else
-            setBeers([...beers, ...beerList]);
+            await setBeers([...beers, ...beerList]);
     };
 
     // Call when App starts
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            const currentScrollValue = window.innerHeight + window.scrollY; 
-            const loadNewDataThreshold = document.body.offsetHeight - pixelsOffsetToLoadNewData; 
-            if (currentScrollValue > loadNewDataThreshold && !isLoading) {
-                setIsLoading(prevValue => !prevValue);
-                setPageNumber(prevPageNumber => prevPageNumber + 1);
+            const wrapper = async () => {
+                const currentScrollValue = window.innerHeight + window.scrollY; 
+                const loadNewDataThreshold = document.body.offsetHeight - pixelsOffsetToLoadNewData; 
+                if (currentScrollValue > loadNewDataThreshold && !isLoading) {
+                    console.log('add new data');
+                    await setIsLoading(prevValue => !prevValue);
+                    await setPageNumber(prevPageNumber => prevPageNumber + 1);
+                }
             }
+            wrapper();
         })
     }, [])
 
@@ -59,7 +64,7 @@ function App() {
     // Update beersQuery
     useEffect(() => {
 
-        // To clean parameters
+        // To clean up parameters
         // APIUrl = new URL(baseUrl);
         setAPIUrl(new URL(baseUrl));
         
@@ -71,8 +76,9 @@ function App() {
         if (searchInput !== '')
             APIUrl.searchParams.set('beer_name', searchInput.replace(' ', '_'));
         
-        console.log(APIUrl.toString());
         setPageNumber(1);
+        fetchAPI();
+        // zobacz czy zmiana z page number 1 na 1 wywoluje useEffect
     }, [searchInput, likedBeersId, displayOnlyLiked]);
     
     // Save likedBeersId to local storage
