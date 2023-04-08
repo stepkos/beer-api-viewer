@@ -3,7 +3,7 @@ import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { Link } from "react-router-dom";
 import logoImg from '../images/logo.jpg';
 
-const FilterForm = ({ searchInput, setSearchInput, displayOnlyLiked, setDisplayOnlyLiked }) =>  (
+const FilterForm = ({ searchInput, setSearchInput, displayOnlyLiked, setDisplayOnlyLiked }) => (
     <div className="filter-form-wrapper">
 
         <Link to={'/'}>
@@ -11,13 +11,16 @@ const FilterForm = ({ searchInput, setSearchInput, displayOnlyLiked, setDisplayO
         </Link>
 
         <form>
+
             <input 
                 type="text" 
                 value={searchInput}
                 onChange={event => setSearchInput(event.target.value)}
                 placeholder="Search" 
-            /> 
+            />
+
             <label>
+
                 <span className="displayLikedText">Only liked</span>
 
                 <span className="displayLikedIcon">
@@ -29,7 +32,9 @@ const FilterForm = ({ searchInput, setSearchInput, displayOnlyLiked, setDisplayO
                     value={displayOnlyLiked}
                     onChange={event => setDisplayOnlyLiked(event.target.checked)}
                 />
+
             </label>
+
         </form>
     </div>
 )

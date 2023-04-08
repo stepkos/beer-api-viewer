@@ -86,17 +86,15 @@ const Catalog = () => {
             setLikedBeersId([...likedBeersId, id]);
     }
 
-    return (
-        <>
-            <FilterForm 
-                searchInput={searchInput} 
-                setSearchInput={setSearchInput} 
-                displayOnlyLiked={displayOnlyLiked}
-                setDisplayOnlyLiked={setDisplayOnlyLiked}
-            />
-            <BeerList beers={beers} toogleLike={toogleLike} />
-        </>
-    );
+    return (<>
+        <FilterForm 
+            searchInput={searchInput} 
+            setSearchInput={setSearchInput} 
+            displayOnlyLiked={displayOnlyLiked}
+            setDisplayOnlyLiked={setDisplayOnlyLiked}
+        />
+        <BeerList beers={beers} toogleLike={toogleLike} />
+    </>);
 }
 
 export default Catalog;
