@@ -33,7 +33,6 @@
   padding: 20px;
   margin: 10px;
   position: relative;
-  cursor: pointer;
   transition: transform ease-in-out .2s;
   box-shadow: 0 0 5px -2px rgba(0, 0, 0, 0.5);
 }
@@ -49,6 +48,7 @@
   top: 15px;
   left: 15px;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .beer img {
