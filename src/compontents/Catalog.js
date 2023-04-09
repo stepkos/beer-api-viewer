@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BeerList from './BeerList';
 import LogoWithForm from './LogoWithForm';
+import Footer from './Footer';
 
 const Catalog = () => {
 
@@ -94,6 +95,7 @@ const Catalog = () => {
             setDisplayOnlyLiked={setDisplayOnlyLiked}
         />
         <BeerList beers={beers} toogleLike={toogleLike} />
+        <Footer />
     </>);
 }
 

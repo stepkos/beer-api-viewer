@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import defaultBeerImg from '../images/defaultBeer.png';
 import { useParams } from 'react-router-dom';
 import Logo from "./Logo";
+import Footer from "./Footer";
 
 const BeerDetails = () =>  {
     const { id } = useParams()
@@ -56,6 +57,8 @@ const BeerDetails = () =>  {
 
             </div>
         </div>
+
+        <Footer />
 
     </>);
 }
