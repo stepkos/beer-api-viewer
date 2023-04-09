@@ -9,9 +9,7 @@ const Logo = () => (
             <img className="tmp" src={logoImg} alt="Logo" />
         </Link>
 
-        <div className="simulate-form-size">
-            {/* <cite>"Beers of your dreams"</cite> */}
-        </div>
+        <div className="simulate-form-size"></div>
         
     </div>
 );

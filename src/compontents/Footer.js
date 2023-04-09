@@ -9,11 +9,11 @@ const Footer = () => (
         </div>
 
         <div>
-            <a href="https://github.com/stepkos">
+            <a href="https://github.com/stepkos" target="_blank">
                 <AiFillGithub />
             </a>
 
-            <a href="https://www.instagram.com/stepkos/">
+            <a href="https://www.instagram.com/stepkos/" target="_blank">
                 <AiOutlineInstagram />
             </a>
         </div>
