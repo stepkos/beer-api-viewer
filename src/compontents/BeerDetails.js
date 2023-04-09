@@ -39,9 +39,13 @@ const BeerDetails = () =>  {
 
                 <div className="details-div">
                     <h1>{beer.name}</h1>
-                    <h3>{beer.tagline}</h3>
-                    <h3>First brewed: {beer.first_brewed}</h3>
+                    <h2>{beer.tagline}</h2>
+                    
                     <p>{beer.description}</p>
+                    
+                    <h3>First brewed: <span className="not-bold">{beer.first_brewed}</span></h3>
+                    <h3>Attenuation level: <span className="not-bold">{beer.attenuation_level}%</span></h3>
+                    <h3>Food pairing: <span className="not-bold">{beer.food_pairing.join(', ')}</span></h3>
                     
                     <div className="coeffiecients">
                         {beer.abv ? <div className="coeffiecient">ABV: {beer.abv}</div> : <></>}
@@ -51,8 +55,6 @@ const BeerDetails = () =>  {
                         {beer.ph ? <div className="coeffiecient">pH: {beer.ph}</div> : <></>}
                     </div>
 
-                    <h5>Attenuation level: {beer.attenuation_level}%</h5>
-                    <h5>Food pairing: {beer.food_pairing.join(', ')}</h5>
                 </div>
 
             </div>

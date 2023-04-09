@@ -16,13 +16,20 @@
   font-size: 20px;
   background-color: #f2f2f2;
   outline: none;
-  /* border: solid 1.3px rgb(59, 59, 59); */
-  border: solid 1.3px #3F2402;
-  border-radius: 2.5px;
+  border: none;
+  border-bottom: solid 2px #836200;
+  border-radius: 4px;
   margin-right: 10px;
   box-sizing: border-box;
   width: 250px;
   color: #3F2402;
+  padding: 2px;
+  padding-left: 4px;
+}
+
+
+.filter-form-wrapper input[type=text]:focus {
+  background-color: #e8e8e8;
 }
 
 .filter-form-wrapper input[type=checkbox] {
@@ -33,20 +40,21 @@
   font-size: 16px;
   padding-right: 5px;
   color: #3F2402;
+  font-weight: 500;
 }
 
 .filter-form-wrapper .displayLikedIcon {
   font-size: 26px;
   position: relative;
-  top: 6px;
+  top: 7px;
 }
 
 .simulate-form-size {
-  width: 362.06px;
+  width: 364.01px;
   /* box-sizing: content-box; */
 }
 
-.beers-wrapper{
+.beers-wrapper {
   background-color: #f2f2f2;
   padding: 10px;
 }
@@ -95,6 +103,12 @@
   height: 200px;
 }
 
+.beer h2 {
+  font-family: 'Kaushan Script', cursive;
+  line-height: 1.25;
+  letter-spacing: 0.7px;
+}
+
 .beer-details-wrapper {
   background-color: #f2f2f2;
 }
@@ -126,6 +140,24 @@
   padding: 20px;
 }
 
+.beer-details .details-div h1 {
+  font-family: 'Kaushan Script', cursive;
+  line-height: 1.25;
+  letter-spacing: 1px;
+  /* margin-left: -5px; */
+}
+
+.beer-details .details-div h2 {
+  margin-top: -5px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.beer-details .details-div h3 {
+  margin: 12px 0;
+  font-size: 15px;
+}
+
 .beer-details .coeffiecients { 
   display: flex;
   justify-content: flex-start;
@@ -153,11 +185,14 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 }
 
 .footer-wrapper h2 {
   font-size: 22px;
+  font-family: 'Kaushan Script', cursive;
+  line-height: 1.25;
+  letter-spacing: 1px;
 }
 
 .footer-wrapper a {
@@ -180,6 +215,9 @@
 
 .not-found h1 {
   margin-top: 70px;
+  font-family: 'Kaushan Script', cursive;
+  line-height: 1.25;
+  letter-spacing: 1px;
 }
 
 .not-found h2 {
@@ -190,6 +228,10 @@
 
 .not-found h2:hover {
   color: #bf9000;
+}
+
+.not-bold {
+  font-weight: normal;
 }
 
 @media (max-width: 740px) {
