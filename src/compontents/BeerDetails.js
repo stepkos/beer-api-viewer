@@ -39,8 +39,8 @@ const BeerDetails = () =>  {
         </div>
 
         <div className="beer-details-wrapper">
-            
             <div className="beer-details">
+
                 <div className="img-div">
                     <img src={beer.image_url ? beer.image_url : defaultBeerImg} alt="Beer image" />
                 </div>
@@ -51,18 +51,19 @@ const BeerDetails = () =>  {
                     <h3>First brewed: {beer.first_brewed}</h3>
                     <p>{beer.description}</p>
                     
-                    <h5>abv: {beer.abv}</h5>
-                    <h5>ibu: {beer.ibu}</h5>
-                    <h5>ebc: {beer.ebc}</h5>
-                    <h5>srm: {beer.srm}</h5>
-                    <h5>ph: {beer.ph}</h5>
+                    <div className="coeffiecients">
+                        {beer.abv ? <div className="coeffiecient">ABV: {beer.abv}</div> : <></>}
+                        {beer.ibu ? <div className="coeffiecient">IBU: {beer.ibu}</div> : <></>}
+                        {beer.ebc ? <div className="coeffiecient">EBC: {beer.ebc}</div> : <></>}
+                        {beer.srm ? <div className="coeffiecient">SRM: {beer.srm}</div> : <></>}
+                        {beer.ph ? <div className="coeffiecient">pH: {beer.ph}</div> : <></>}
+                    </div>
+
                     <h5>Attenuation level: {beer.attenuation_level}</h5>
                     <h5>Food pairing: {beer.food_pairing.join(', ')}</h5>
                 </div>
 
             </div>
-
-
         </div>
 
     </>);

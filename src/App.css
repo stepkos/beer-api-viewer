@@ -144,6 +144,25 @@
   padding: 20px;
 }
 
+.beer-details .coeffiecients { 
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.beer-details .coeffiecient { 
+  padding: 4px;
+  margin-right: 7px;
+  margin-top: 7px;
+  background-color: #bf9000;
+  border: #836200 1.5px solid;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  /* color: #bf9000; */
+  /* border: #bf9000 2px solid; */
+}
+
 @media (max-width: 600px) {
   .beer-details {
     flex-wrap: wrap;
