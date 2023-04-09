@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BeerList from './BeerList';
-import FilterForm from './FilterForm';
+import LogoWithForm from './LogoWithForm';
 
 const Catalog = () => {
 
@@ -87,7 +87,7 @@ const Catalog = () => {
     }
 
     return (<>
-        <FilterForm 
+        <LogoWithForm
             searchInput={searchInput} 
             setSearchInput={setSearchInput} 
             displayOnlyLiked={displayOnlyLiked}

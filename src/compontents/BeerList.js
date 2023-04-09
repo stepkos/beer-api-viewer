@@ -1,11 +1,11 @@
 import React from "react";
-import Beer from "./Beer";
+import BeerTile from "./BeerTile";
 
 const BeerList = ({ beers, toogleLike }) => (
     <div className="beers-wrapper">
         <div className="beers">
             {beers.map(beer => (
-                <Beer key={beer.id} beer={beer} toogleLike={toogleLike} />    
+                <BeerTile key={beer.id} beer={beer} toogleLike={toogleLike} />    
             ))}
         </div>
     </div>

@@ -3,7 +3,7 @@ import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import { Link } from "react-router-dom";
 import logoImg from '../images/logo.jpg';
 
-const FilterForm = ({ searchInput, setSearchInput, displayOnlyLiked, setDisplayOnlyLiked }) => (
+const LogoWithForm = ({ searchInput, setSearchInput, displayOnlyLiked, setDisplayOnlyLiked }) => (
     <div className="filter-form-wrapper">
 
         <Link to={'/'}>
@@ -39,4 +39,4 @@ const FilterForm = ({ searchInput, setSearchInput, displayOnlyLiked, setDisplayO
     </div>
 )
 
-export default FilterForm;
+export default LogoWithForm;

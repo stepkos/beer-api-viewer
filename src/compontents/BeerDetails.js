@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import defaultBeerImg from '../images/defaultBeer.png';
 import { useParams } from 'react-router-dom';
-import { Link } from "react-router-dom";
-import logoImg from '../images/logo.jpg';
+import Logo from "./Logo";
 
 const BeerDetails = () =>  {
     const { id } = useParams()
@@ -28,15 +27,7 @@ const BeerDetails = () =>  {
 
     return (<>
 
-        <div className="filter-form-wrapper">
-
-            <Link to={'/'}>
-                <img className="tmp" src={logoImg} alt="Logo" />
-            </Link>
-
-            <div className="symulate-form-size"></div>
-            
-        </div>
+        <Logo />
 
         <div className="beer-details-wrapper">
             <div className="beer-details">

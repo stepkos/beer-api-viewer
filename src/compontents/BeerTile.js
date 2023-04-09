@@ -3,7 +3,7 @@ import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import defaultBeerImg from '../images/defaultBeer.png';
 import { Link } from "react-router-dom";
 
-const Beer = ({ beer, toogleLike }) =>  {
+const BeerTile = ({ beer, toogleLike }) =>  {
     
     const needBeSmaller = beer.name.length > 25 || beer.tagline.length > 40;
 
@@ -25,4 +25,4 @@ const Beer = ({ beer, toogleLike }) =>  {
     );
 }
 
-export default Beer;
+export default BeerTile;
