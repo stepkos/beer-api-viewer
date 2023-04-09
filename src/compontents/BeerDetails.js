@@ -51,7 +51,7 @@ const BeerDetails = () =>  {
                         {beer.ph ? <div className="coeffiecient">pH: {beer.ph}</div> : <></>}
                     </div>
 
-                    <h5>Attenuation level: {beer.attenuation_level}</h5>
+                    <h5>Attenuation level: {beer.attenuation_level}%</h5>
                     <h5>Food pairing: {beer.food_pairing.join(', ')}</h5>
                 </div>
 

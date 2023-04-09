@@ -41,9 +41,14 @@
   top: 6px;
 }
 
-.symulate-form-size {
+.simulate-form-size {
   width: 362.06px;
+  /* box-sizing: content-box; */
 }
+
+/* .simulate-form-size cite {
+  font-size: 22px;
+} */
 
 .beers-wrapper{
   background-color: #f2f2f2;
