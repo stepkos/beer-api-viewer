@@ -55,11 +55,13 @@ const BeerDetails = () =>  {
 
                 <div className="details-div">
                     
-                    <div className="like" onClick={() => toogleLike(beer.id)}>
-                        { likedBeersId.includes(beer.id) ? <AiFillHeart style={{"color": "#bf9000"}} /> : <AiOutlineHeart /> }
+                    <div className="row">
+                        <h1>{beer.name}</h1>
+                        <div className="like" onClick={() => toogleLike(beer.id)}>
+                            { likedBeersId.includes(beer.id) ? <AiFillHeart style={{"color": "#bf9000"}} /> : <AiOutlineHeart /> }
+                        </div>                    
                     </div>
 
-                    <h1>{beer.name}</h1>
                     <h2>{beer.tagline}</h2>
                     
                     <p>{beer.description}</p>
