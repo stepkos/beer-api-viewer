@@ -1,4 +1,5 @@
 .filter-form-wrapper {
+  background-color: white;
   padding: 10px;
   display: flex;
   justify-content: space-evenly;
@@ -57,6 +58,7 @@
 .beers-wrapper {
   background-color: #f2f2f2;
   padding: 10px;
+  padding-bottom: 74.02px;
 }
 
 .beers {
@@ -111,6 +113,7 @@
 
 .beer-details-wrapper {
   background-color: #f2f2f2;
+  padding-bottom: 64.02px;
 }
 
 .beer-details {
@@ -182,6 +185,10 @@
   background-color: #bf9000;
   color: white;
   /* border-top: 2px solid #836200; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
