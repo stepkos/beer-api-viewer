@@ -141,6 +141,15 @@
 .beer-details .details-div {
   max-width: 500px;
   padding: 20px;
+  position: relative;
+}
+
+.beer-details .details-div .like {
+  position: absolute;
+  top: 60px;
+  right: 45px;
+  font-size: 38px;
+  cursor: pointer;
 }
 
 .beer-details .details-div h1 {
@@ -278,6 +287,10 @@
 
   .beer-details .details-div {
     padding-top: 5px;
+  }
+
+  .beer-details .details-div .like {
+    top: 45px;
   }
 
   .beer-details .img-div img {

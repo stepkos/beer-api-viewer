@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import defaultBeerImg from '../images/defaultBeer.png';
 import { useParams } from 'react-router-dom';
 import Logo from "./Logo";
 import Footer from "./Footer";
 
 const BeerDetails = () =>  {
+
     const { id } = useParams()
     const [beer, setBeer] = useState();
+    const [likedBeersId, setLikedBeersId] = useState(() => {
+        const storedList = localStorage.getItem('likedBeersId');
+        return storedList ? JSON.parse(storedList) : [];
+    });
 
     useEffect(() => {
         const fetchBeer = async () => {
@@ -22,9 +28,19 @@ const BeerDetails = () =>  {
         fetchBeer();
     }, [id]);
 
-    if (!beer) {
-        return;
+    // Save likedBeersId to local storage
+    useEffect(() => {
+        localStorage.setItem('likedBeersId', JSON.stringify(likedBeersId));
+    }, [likedBeersId])
+
+    const toogleLike = id => {
+        if (likedBeersId.includes(id))
+            setLikedBeersId(likedBeersId.filter(el => el !== id));
+        else
+            setLikedBeersId([...likedBeersId, id]);
     }
+
+    if (!beer) return;
 
     return (<>
 
@@ -38,6 +54,11 @@ const BeerDetails = () =>  {
                 </div>
 
                 <div className="details-div">
+                    
+                    <div className="like" onClick={() => toogleLike(beer.id)}>
+                        { likedBeersId.includes(beer.id) ? <AiFillHeart style={{"color": "#bf9000"}} /> : <AiOutlineHeart /> }
+                    </div>
+
                     <h1>{beer.name}</h1>
                     <h2>{beer.tagline}</h2>
                     
