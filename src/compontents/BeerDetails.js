@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import defaultBeerImg from '../images/defaultBeer.png';
 import { useParams } from 'react-router-dom';
+import NotFound from "./NotFound";
 import Logo from "./Logo";
 import Footer from "./Footer";
 
@@ -22,7 +23,7 @@ const BeerDetails = () =>  {
                 setBeer(data[0]);
             } catch (error) {
                 console.error(error);
-                return <h1>Something was wrong</h1>
+                return <NotFound />;
             }
         };
         fetchBeer();

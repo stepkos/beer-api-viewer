@@ -23,7 +23,7 @@ const Catalog = () => {
         url.searchParams.set('page', page);
         url.searchParams.set('per_page', scrollBeersPortion);
         
-        console.log(url.toString());
+        // console.log(url.toString());
         const data = await fetch(url);
         const beerList = await data.json();
         
