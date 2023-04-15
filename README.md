@@ -7,12 +7,12 @@
 - The app to present beers from [Punk API](https://punkapi.com/documentation/v2)
 - ***At this moment app is working on [piwo.ddns.net](http://piwo.ddns.net/)***
 
-<img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-catalog.png" alt="Desktop catalog" width="65%">
-<img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-details.png" alt="Desktop details" width="65%">
+<img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-catalog.png" alt="Desktop catalog">
+<img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-details.png" alt="Desktop details">
 
 <p>
-  <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/phone-catalog.jpeg" alt="Phone catalog" width="40%">
-  <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/phone-details.png" alt="Phone details" width="25%">
+  <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/phone-catalog.jpeg" alt="Phone catalog" width="59%">
+  <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/phone-details.png" alt="Phone details" width="40%">
 </p>
 
 ## Features
