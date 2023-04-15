@@ -10,11 +10,6 @@
 <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-catalog.png" alt="Desktop catalog">
 <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-details.png" alt="Desktop details">
 
-<p>
-  <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/phone-catalog.jpeg" alt="Phone catalog" width="59%">
-  <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/phone-details.png" alt="Phone details" width="40%">
-</p>
-
 ## Features
 - List of beers
 - Searching beer by name
