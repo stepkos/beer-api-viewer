@@ -12,10 +12,6 @@ const Catalog = () => {
     });
     const [searchInput, setSearchInput] = useState('');
     const [displayOnlyLiked, setDisplayOnlyLiked] = useState(false);
-    // const [pageNumber, setPageNumber] = useState(1);
-    // const [isLoading, setIsLoading] = useState(false);
-    
-    // const pixelsOffsetToLoadNewData = 100;
     const scrollBeersPortion = 20;
     const baseUrl = 'https://api.punkapi.com/v2/beers';
 
@@ -35,27 +31,6 @@ const Catalog = () => {
         else
             await setBeers([...beers, ...beerList]);
     };
-
-    // Call when App starts
-    // useEffect(() => {
-    //     window.addEventListener('scroll', async () => {
-    //             const currentScrollValue = window.innerHeight + window.scrollY; 
-    //             const loadNewDataThreshold = document.body.offsetHeight - pixelsOffsetToLoadNewData; 
-    //             if (currentScrollValue > loadNewDataThreshold && !isLoading) {
-    //                 console.log('add new data');
-    //                 await setIsLoading(prevValue => !prevValue);
-    //                 await setPageNumber(prevPageNumber => prevPageNumber + 1);
-    //             }
-    //     });
-    // }, [])
-
-    // useEffect(() => {
-    //     const wrapper = async () => {
-    //         await fetchAPI();
-    //         setIsLoading(false);
-    //     }
-    //     wrapper();
-    // }, [pageNumber]);
 
     // Update beersQuery
     useEffect(() => {
