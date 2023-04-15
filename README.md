@@ -4,17 +4,16 @@
 [![forthebadge](https://forthebadge.com/images/badges/ages-18.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 
-<p align="center"><img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-catalog.png" alt="Desktop catalog" width="65%"></p>
-<p align="center"><img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-details.png" alt="Desktop details" width="65%"></p>
+- The app to present beers from [Punk API](https://punkapi.com/documentation/v2)
+- ***At this moment app is working on [piwo.ddns.net](http://piwo.ddns.net/)***
+
+<img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-catalog.png" alt="Desktop catalog" width="65%">
+<img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-details.png" alt="Desktop details" width="65%">
 
 <p>
   <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/phone-catalog.jpeg" alt="Phone catalog" width="40%">
   <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/phone-details.png" alt="Phone details" width="25%">
 </p>
-
-## Preview
-- The app to present beers from [Punk API](https://punkapi.com/documentation/v2)
-- ***At this moment app is working on [piwo.ddns.net](http://piwo.ddns.net/)***
 
 ## Features
 - List of beers
