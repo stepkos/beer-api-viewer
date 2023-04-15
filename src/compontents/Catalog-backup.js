@@ -19,8 +19,8 @@ const Catalog = () => {
     const scrollBeersPortion = 20;
     const baseUrl = 'https://api.punkapi.com/v2/beers';
 
-    const fetchAPI = async (url, isFirstPage) => {
-        url.searchParams.set('page', isFirstPage ? 1 : pageNumber);
+    const fetchAPI = async (url, page=1) => {
+        url.searchParams.set('page', page);
         url.searchParams.set('per_page', scrollBeersPortion);
         
         console.log(url.toString());
@@ -30,21 +30,20 @@ const Catalog = () => {
         // Add is_liked to beer object
         beerList.forEach(beer => beer.is_liked = likedBeersId.includes(beer.id));
         
-        if (isFirstPage)
+        if (page === 1)
             await setBeers(beerList);
         else
             await setBeers([...beers, ...beerList]);
-        
-        if (isFirstPage) 
-            setPageNumber(2);
-        else
-            setPageNumber(pageNumber + 1);
+
+        setPageNumber(pageNumber + 1);
     };
 
-    const fetchWrapper = (isFirstPage) => {
+    // Update beersQuery
+    useEffect(() => {
+
         // To clean up parameters
         let url = new URL(baseUrl);
-    
+        
         // Display only liked
         if (displayOnlyLiked)
             url.searchParams.set("ids", likedBeersId.join('|'));
@@ -53,19 +52,16 @@ const Catalog = () => {
         if (searchInput !== '')
             url.searchParams.set('beer_name', searchInput.replace(' ', '_'));
 
-        fetchAPI(url, isFirstPage);
-    }
+        fetchAPI(url, 1);
+        setPageNumber(1);
 
-    // Update beersQuery
-    useEffect(() => {
-        fetchWrapper(true);
     }, [searchInput, likedBeersId, displayOnlyLiked]);
     
     // Save likedBeersId to local storage
     useEffect(() => {
         localStorage.setItem('likedBeersId', JSON.stringify(likedBeersId));
-        // setBeers(beers.forEach(beer => beer.is_liked = likedBeersId.includes(beer.id)));
     }, [likedBeersId])
+
     
     useEffect(() => {
         const handleScroll = () => {
@@ -76,15 +72,22 @@ const Catalog = () => {
             const windowBottom = windowHeight + window.pageYOffset;
 
             if (windowBottom >= docHeight) {
-                console.log('jestem tu')
-                fetchWrapper(false);
+                let url = new URL(baseUrl);
+        
+                if (displayOnlyLiked)
+                    url.searchParams.set("ids", likedBeersId.join('|'));
+                
+                if (searchInput !== '')
+                    url.searchParams.set('beer_name', searchInput.replace(' ', '_'));
+
+                fetchAPI(url, pageNumber);
             }
         };
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
 
-    }, [pageNumber]);
+    }, [pageNumber, displayOnlyLiked, searchInput]);
 
     const toogleLike = id => {
         if (likedBeersId.includes(id))
@@ -92,9 +95,6 @@ const Catalog = () => {
         else
             setLikedBeersId([...likedBeersId, id]);
     }
-
-    if (!beers)
-        return;
 
     return (<>
         <LogoWithForm
