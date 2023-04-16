@@ -18,6 +18,7 @@
 - List your favourite beers
 - Fav beers list is saving to localStorage so you don't lost it after refreshing a page
 - Responsive Web Design
+- *Infinity Scroll (in progress)*
 
 ## Run Locally
 - Clone the project
