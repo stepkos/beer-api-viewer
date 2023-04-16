@@ -30,21 +30,20 @@ const Catalog = () => {
         // Add is_liked to beer object
         beerList.forEach(beer => beer.is_liked = likedBeersId.includes(beer.id));
         
-        if (isFirstPage)
+        if (isFirstPage) {
             await setBeers(beerList);
-        else
-            await setBeers([...beers, ...beerList]);
-        
-        if (isFirstPage) 
             setPageNumber(2);
-        else
+        }
+        else {
+            await setBeers([...beers, ...beerList]);
             setPageNumber(pageNumber + 1);
+        }
     };
 
     const fetchWrapper = (isFirstPage) => {
         // To clean up parameters
         let url = new URL(baseUrl);
-    
+        console.log('display only liked ' + displayOnlyLiked)
         // Display only liked
         if (displayOnlyLiked)
             url.searchParams.set("ids", likedBeersId.join('|'));
@@ -60,6 +59,10 @@ const Catalog = () => {
     useEffect(() => {
         fetchWrapper(true);
     }, [searchInput, displayOnlyLiked]);
+
+    useEffect(() => {
+        console.log(displayOnlyLiked);
+    }, [displayOnlyLiked])
     
     // Save likedBeersId to local storage
     useEffect(() => {
@@ -83,7 +86,6 @@ const Catalog = () => {
 
             if (windowBottom >= docHeight) {
                 console.log('load new beers')
-                console.log('display only liked ' + displayOnlyLiked)
                 fetchWrapper(false);
             }
         };
