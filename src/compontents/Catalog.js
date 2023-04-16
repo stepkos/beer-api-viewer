@@ -59,12 +59,18 @@ const Catalog = () => {
     // Update beersQuery
     useEffect(() => {
         fetchWrapper(true);
-    }, [searchInput, likedBeersId, displayOnlyLiked]);
+    }, [searchInput, displayOnlyLiked]);
     
     // Save likedBeersId to local storage
     useEffect(() => {
         localStorage.setItem('likedBeersId', JSON.stringify(likedBeersId));
-        // setBeers(beers.forEach(beer => beer.is_liked = likedBeersId.includes(beer.id)));
+        setBeers(prevBeers => {
+            return prevBeers.map(beer => {
+              beer.is_liked = likedBeersId.includes(beer.id);
+              return beer;
+            });
+        });
+
     }, [likedBeersId])
     
     useEffect(() => {
@@ -76,7 +82,8 @@ const Catalog = () => {
             const windowBottom = windowHeight + window.pageYOffset;
 
             if (windowBottom >= docHeight) {
-                console.log('jestem tu')
+                console.log('load new beers')
+                console.log('display only liked ' + displayOnlyLiked)
                 fetchWrapper(false);
             }
         };
@@ -87,6 +94,7 @@ const Catalog = () => {
     }, [pageNumber]);
 
     const toogleLike = id => {
+        console.log("toogle")
         if (likedBeersId.includes(id))
             setLikedBeersId(likedBeersId.filter(el => el !== id));
         else
