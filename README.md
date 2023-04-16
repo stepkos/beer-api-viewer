@@ -34,7 +34,7 @@
 
 - Start the server
 ```bash
-  npm run start
+  npm start
 ```
 
 ## Author
