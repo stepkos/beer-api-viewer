@@ -5,7 +5,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
 
 - The app to present beers from [Punk API](https://punkapi.com/documentation/v2)
-- ***At this moment app is working on [piwo.ddns.net](http://piwo.ddns.net/)***
+- ***At this moment app is working on [piwo.stepkowski.pl](http://piwo.stepkowski.pl/)***
 
 <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-catalog.png" alt="Desktop catalog">
 <img src="https://github.com/stepkos/BeerAPIViewer/blob/main/docs/screens/desktop-details.png" alt="Desktop details">
