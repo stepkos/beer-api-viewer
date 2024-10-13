@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const BeerTile = ({ beer, toogleLike }) =>  {
     
     const needBeSmaller = beer.name.length > 25 || beer.tagline.length > 40;
+    const imagesApiUrl = 'http://images.beer.stepkowski.pl';
 
     return (
         <div className={`beer ${beer.is_liked ? 'liked' : ''}`}>
@@ -15,7 +16,14 @@ const BeerTile = ({ beer, toogleLike }) =>  {
             </div>
 
             <Link to={`/beers/${beer.id}`}>
-                <img src={beer.image_url ? beer.image_url : defaultBeerImg} alt="Beer image" />
+                <img
+                    src={
+                        beer.image_url ?
+                        imagesApiUrl + beer.image_url.replace('https://images.punkapi.com', '')
+                        : defaultBeerImg
+                    } 
+                    alt="Beer image" 
+                />
             
                 <h2 style={needBeSmaller ? {"marginTop": "10px", "marginBottom": "10px"} : {}}>{beer.name}</h2>
             

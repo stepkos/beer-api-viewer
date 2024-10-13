@@ -15,10 +15,13 @@ const BeerDetails = () =>  {
         return storedList ? JSON.parse(storedList) : [];
     });
 
+    const apiUrl = 'http://api.beer.stepkowski.pl';
+    const imagesApiUrl = 'http://images.beer.stepkowski.pl';
+
     useEffect(() => {
         const fetchBeer = async () => {
             try {
-                const response = await fetch(`https://api.punkapi.com/v2/beers/${id}`);
+                const response = await fetch(`${apiUrl}/v2/beers/${id}`);
                 const data = await response.json();
                 setBeer(data[0]);
             } catch (error) {
@@ -51,7 +54,14 @@ const BeerDetails = () =>  {
             <div className="beer-details">
 
                 <div className="img-div">
-                    <img src={beer.image_url ? beer.image_url : defaultBeerImg} alt="Beer image" />
+                    <img
+                        src={
+                            beer.image_url ?
+                            imagesApiUrl + beer.image_url.replace('https://images.punkapi.com', '')
+                            : defaultBeerImg
+                        } 
+                        alt="Beer image" 
+                    />
                 </div>
 
                 <div className="details-div">

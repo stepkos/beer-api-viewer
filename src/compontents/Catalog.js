@@ -13,7 +13,7 @@ const Catalog = () => {
     const [searchInput, setSearchInput] = useState('');
     const [displayOnlyLiked, setDisplayOnlyLiked] = useState(false);
     const scrollBeersPortion = 20;
-    const baseUrl = 'https://api.punkapi.com/v2/beers';
+    const baseUrl = 'http://api.beer.stepkowski.pl/v2/beers';
 
     const fetchAPI = async (url, page=1) => {
         url.searchParams.set('page', page);
