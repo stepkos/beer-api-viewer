@@ -48,7 +48,7 @@ const Catalog = () => {
 
         fetchAPI(url, 1);
 
-    }, [searchInput, likedBeersId, displayOnlyLiked, beers]);
+    }, [searchInput, likedBeersId, displayOnlyLiked]);
     
     // Save likedBeersId to local storage
     useEffect(() => {
